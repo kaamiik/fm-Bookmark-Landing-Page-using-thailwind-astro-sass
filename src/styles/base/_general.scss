@@ -9,10 +9,21 @@ body {
   line-height: $body-line-height;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 a {
   color: $link-color;
 }
 
-a:is(:hover, :focus) {
+a:hover {
   color: $link-color-hover;
+}
+
+a:focus-visible {
+  color: $link-color-hover;
+  outline: 2px solid $color-primary-400;
+  outline-offset: 4px;
+  border-radius: $border-radius-1;
 }
