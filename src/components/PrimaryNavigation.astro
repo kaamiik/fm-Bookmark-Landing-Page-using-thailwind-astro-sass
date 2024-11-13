@@ -2,31 +2,33 @@
 
 ---
 
-<nav aria-label="primary navigation">
-  <ul class="nav | flex-group">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="#">Page 2</a></li>
-    <li><a href="#">Page 3</a></li>
-    <li><a href="#">Page 4</a></li>
+<!-- <nav aria-label="primary navigation">
+  <ul class="nav | flex-group uppercase fs-600 tracking-[1.5px]">
+    <li><a href="/index.html">Features</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Contact</a></li>
+    <li>
+      <a
+        class="bg-soft-red text-white padding-block-3 padding-inline-8 border-radius-1"
+        href="#">Login</a
+      >
+    </li>
   </ul>
-</nav>
-
+</nav> -->
 <style lang="scss">
   @use "../styles/abstracts" as *;
   .nav {
     --flex-column-gap: #{$navigation-gap};
+  }
 
-    list-style: none;
-    font-family: $navigation-font-family;
-    font-weight: $navigation-font-weight;
-
-    a {
-      color: $navigation-color;
-      text-decoration: $navigation-link-text-decoration;
-
-      &:is(:hover, :focus) {
-        color: $navigation-color-hover;
-      }
+  li:last-of-type > a {
+    outline: 2px solid transparent;
+    transition: 400ms ease-in-out;
+    &:is(:hover, :focus-visible) {
+      color: $color-primary-500;
+      background-color: $color-neutral-100;
+      outline-color: $color-primary-500;
+      outline-offset: -2px;
     }
   }
 </style>
