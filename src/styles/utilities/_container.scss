@@ -8,11 +8,20 @@
   margin-inline: auto;
 }
 
-.container[data-type="narrow"] {
-  --max-width: #{$container-max-width-narrow};
+.container[data-type="tab"] {
+  --max-width: #{$container-max-width-tab};
 }
-.container[data-type="wide"] {
-  --max-width: #{$container-max-width-wide};
+.container[data-type="browsers"] {
+  --max-width: #{$container-max-width-browsers};
+}
+.container[data-type="accordion"] {
+  --max-width: #{$container-max-width-accordion};
+}
+.container[data-type="cta"] {
+  --max-width: #{$container-max-width-cta};
+}
+.container[data-type="hero"] {
+  --max-width: #{$container-max-width-hero};
 }
 .container[data-type="full-bleed"] {
   --max-width: 100%;

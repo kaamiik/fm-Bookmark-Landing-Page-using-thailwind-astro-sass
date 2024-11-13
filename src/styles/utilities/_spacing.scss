@@ -4,10 +4,6 @@
   padding-block: $section-padding-block;
 }
 
-.mx-auto {
-  margin-inline: auto;
-}
-
 @each $size-name, $size-value in $sizes {
   .margin {
     &-#{$size-name} {
