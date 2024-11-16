@@ -51,6 +51,7 @@ const faqs = [
       </p>
     </div>
     <div role="group" aria-labelledby="AccId">
+      <h2 class="sr-only" id="AccId">FAQ Accordion</h2>
       {
         faqs.map(({ id, question, answer, open, borderClass }) => (
           <details
