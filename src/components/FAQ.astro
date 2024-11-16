@@ -1,0 +1,142 @@
+---
+const faqs = [
+  {
+    id: "Acc1",
+    question: "What is Bookmark?",
+    answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+    tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+    quis quam ornare mattis.`,
+    open: true,
+    borderClass: "border-y", // First FAQ has border-y
+  },
+  {
+    id: "Acc2",
+    question: "How can I request a new browser?",
+    answer: `Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros
+    aliquet convallis ultricies. Mauris augue massa, ultricies non
+    ligula. Suspendisse imperdiet.`,
+    open: false,
+    borderClass: "border-b", // Others have border-b
+  },
+  {
+    id: "Acc3",
+    question: "Is there a mobile app?",
+    answer: `Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+    vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
+    quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin
+    ex et ultricies bibendum.`,
+    open: false,
+    borderClass: "border-b",
+  },
+  {
+    id: "Acc4",
+    question: "What about other Chromium browsers?",
+    answer: `Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat
+    mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+    pellentesque non ut velit.`,
+    open: false,
+    borderClass: "border-b",
+  },
+];
+---
+
+<div class="container mt-25 flex flex-col gap-12" data-type="accordion">
+  <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-4 text-center text-balance">
+      <h2 class="heading-2">Frequently Asked Questions</h2>
+      <p>
+        Here are some of our FAQs. If you have any other questions you’d like
+        answered please feel free to email us.
+      </p>
+    </div>
+    <div role="group" aria-labelledby="AccId">
+      {
+        faqs.map(({ id, question, answer, open, borderClass }) => (
+          <details
+            class={`pt-5 pb-3 border-solid border-very-dark-blue/[0.15] ${borderClass}`}
+            name="faq"
+            open={open}
+          >
+            <summary
+              class="list-none cursor-pointer flex justify-between items-center"
+              id={id}
+            >
+              <p class="text-very-dark-blue">{question}</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                <path
+                  fill="none"
+                  stroke="#5267DF"
+                  stroke-width="3"
+                  d="M1 1l8 8 8-8"
+                />
+              </svg>
+            </summary>
+            <div class="pt-6 pb-4" role="region">
+              <p class="text-sm">{answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+  <a
+    class="main__btn bg-soft-blue text-white py-[0.625rem] px-6 border-radius-1 box-shadow-1 w-fit mx-auto"
+    data-type="primary"
+    href="#"
+  >
+    More Info
+  </a>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  summary p {
+    transition: 275ms ease-in-out;
+  }
+
+  summary:is(:hover, :focus-visible) p {
+    color: $color-primary-500;
+  }
+
+  summary:focus-visible {
+    outline: 2px solid $color-primary-500;
+    outline-offset: 4px;
+    border-radius: $border-radius-1;
+  }
+
+  details[open=""] > summary {
+    path {
+      stroke: #fa5959;
+    }
+  }
+
+  details svg {
+    transition: 275ms ease-in-out;
+  }
+
+  details[open=""] > summary {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .main__btn {
+    transition: 400ms ease-in-out;
+  }
+
+  .main__btn[data-type="primary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-primary-400;
+    outline: 2px solid $color-primary-400;
+    outline-offset: -2px;
+  }
+
+  .main__btn[data-type="secondary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-neutral-900;
+    outline: 2px solid $color-neutral-900;
+    outline-offset: -2px;
+  }
+</style>

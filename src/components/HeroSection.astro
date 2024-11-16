@@ -1,0 +1,90 @@
+---
+
+---
+
+<div class="hero | container mt-10 grid gap-10 lg:mt-15" data-type="hero">
+  <div class="hero__image lg:order-last">
+    <img
+      class="mx-auto lg:mx-0 lg:h-[27.5rem]"
+      src="/assets/images/illustration-hero.svg"
+      alt=""
+    />
+  </div>
+  <div class="max-w-[33.75rem] mx-auto flex flex-col gap-8 lg:mx-0 lg:mt-18">
+    <div class="flex flex-col gap-4 text-center lg:text-left lg:gap-6">
+      <h1 class="heading-1 text-balance">A Simple Bookmark Manager</h1>
+      <p>
+        A clean and simple interface to organize your favourite websites. Open a
+        new browser tab and see your sites load instantly. Try it for free.
+      </p>
+    </div>
+    <div class="flex justify-center flex-wrap gap-3 lg:justify-start">
+      <a
+        class="main__btn | bg-soft-blue text-white py-[0.625rem] px-4 rounded-sm box-shadow-1"
+        data-type="primary"
+        href="#">Get it on Chrome</a
+      >
+      <a
+        class="main__btn | bg-almost-white py-[0.625rem] px-4 rounded-sm box-shadow-1"
+        data-type="secondary"
+        href="#">Get it on Firefox</a
+      >
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .hero {
+    @include mq(large) {
+      grid-template-columns: 1fr 1fr;
+      gap: $size-6;
+    }
+
+    &__image {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 25%;
+        left: 90%;
+        width: 100vw;
+        height: 75%;
+        background-color: $color-primary-400;
+        z-index: -1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 70%;
+        height: 75%;
+        background-color: $color-primary-400;
+        border-top-left-radius: 100vh;
+        border-bottom-left-radius: 100vh;
+        z-index: -1;
+      }
+    }
+  }
+
+  .main__btn {
+    transition: 400ms ease-in-out;
+  }
+
+  .main__btn[data-type="primary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-primary-400;
+    outline: 2px solid $color-primary-400;
+    outline-offset: -2px;
+  }
+
+  .main__btn[data-type="secondary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-neutral-900;
+    outline: 2px solid $color-neutral-900;
+    outline-offset: -2px;
+  }
+</style>

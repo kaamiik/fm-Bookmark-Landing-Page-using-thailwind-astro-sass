@@ -1,0 +1,265 @@
+---
+
+---
+
+<div
+  class="container mt-25 flex flex-col gap-4 text-center max-w-[33.75rem] lg:mt-20"
+>
+  <h2 class="heading-2 tracking-[-0.08px]">Features</h2>
+  <p>
+    Our aim is to make it quick and easy for you to access your favourite
+    websites. Your bookmarks sync between your devices so you can access them on
+    the go.
+  </p>
+</div>
+
+<div class="mt-10 flex flex-col gap-18 lg:mt-18">
+  <div class="container" data-type="tab">
+    <ul
+      class="fs-500 flex flex-col text-center lg:flex-row lg:justify-center"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      <li
+        class="current py-5 border-y border-[rgba(73,93,207,20.01%)] lg:py-0 lg:pb-8 lg:border-y-0 lg:border-b lg:grow"
+        role="presentation"
+      >
+        <a
+          role="tab"
+          href="#section1"
+          id="tab1"
+          aria-selected="true"
+          data-tab="section1">Simple Bookmarking</a
+        >
+      </li>
+      <li
+        class="py-5 lg:py-0 lg:pb-8 lg:border-[rgba(73,93,207,20.01%)] lg:border-b lg:grow"
+        role="presentation"
+      >
+        <a
+          role="tab"
+          tabindex="-1"
+          href="#section2"
+          id="tab2"
+          data-tab="section2">Speedy Searching</a
+        >
+      </li>
+      <li
+        class="py-5 border-y border-[rgba(73,93,207,20.01%)] lg:py-0 lg:pb-8 lg:border-y-0 lg:border-b lg:grow"
+        role="presentation"
+      >
+        <a
+          role="tab"
+          tabindex="-1"
+          href="#section3"
+          id="tab3"
+          data-tab="section3">Easy Sharing</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <section
+      class="tabpanel grid gap-24"
+      role="tabpanel"
+      id="section1"
+      aria-labelledby="tab1"
+    >
+      <div class="tabpanel__image">
+        <img
+          class="mx-auto lg:mx-0"
+          src="/assets/images/illustration-features-tab-1.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="flex flex-col gap-4 text-center max-w-[27.8125rem] mx-auto lg:text-left lg:self-center lg:mx-0"
+      >
+        <h2 class="heading-2">Bookmark in one click</h2>
+        <p>
+          Organize your bookmarks however you like. Our simple drag-and-drop
+          interface gives you complete control over how you manage your
+          favourite sites.
+        </p>
+        <a
+          class="main__btn | bg-soft-blue text-white py-[0.625rem] px-6 w-fit mx-auto border-radius-1 box-shadow-1 lg:mx-0 lg:mt-4"
+          data-type="primary"
+          href="#">More Info</a
+        >
+      </div>
+    </section>
+    <section
+      class="tabpanel gap-24"
+      role="tabpanel"
+      id="section2"
+      aria-labelledby="tab2"
+      hidden
+    >
+      <div class="tabpanel__image">
+        <img
+          class="mx-auto lg:mx-0"
+          src="/assets/images/illustration-features-tab-2.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="flex flex-col gap-4 text-center max-w-[27.8125rem] mx-auto lg:text-left lg:self-center lg:mx-0"
+      >
+        <h2 class="heading-2">Intelligent search</h2>
+        <p>
+          Our powerful search feature will help you find saved sites in no time
+          at all. No need to trawl through all of your bookmarks.
+        </p>
+        <a
+          class="main__btn | bg-soft-blue text-white py-[0.625rem] px-6 w-fit mx-auto border-radius-1 box-shadow-1 lg:mx-0 lg:mt-4"
+          data-type="primary"
+          href="#">More Info</a
+        >
+      </div>
+    </section>
+    <section
+      class="tabpanel gap-24"
+      role="tabpanel"
+      id="section3"
+      aria-labelledby="tab3"
+      hidden
+    >
+      <div class="tabpanel__image">
+        <img
+          class="mx-auto lg:mx-0"
+          src="/assets/images/illustration-features-tab-3.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="flex flex-col gap-4 text-center max-w-[27.8125rem] mx-auto lg:text-left lg:self-center lg:mx-0"
+      >
+        <h2 class="heading-2">Share your bookmarks</h2>
+        <p>
+          Easily share your bookmarks and collections with others. Create a
+          shareable link that you can send at the click of a button.
+        </p>
+        <a
+          class="main__btn | bg-soft-blue text-white py-[0.625rem] px-6 w-fit mx-auto border-radius-1 box-shadow-1 lg:mx-0 lg:mt-4"
+          data-type="primary"
+          href="#">More Info</a
+        >
+      </div>
+    </section>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  a[role="tab"] {
+    opacity: 75%;
+  }
+
+  .current {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $color-primary-500;
+      width: 150px;
+      height: 4px;
+
+      @include mq(large) {
+        width: 100%;
+      }
+    }
+
+    & > a {
+      opacity: 100%;
+    }
+  }
+
+  .tabpanel {
+    @include mq(large) {
+      grid-template-columns: 1fr 1fr;
+      gap: 7.75rem;
+    }
+
+    &:first-of-type {
+      .tabpanel__image {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 20%;
+          right: 90%;
+          width: 100vw;
+          height: 100%;
+          background-color: $color-primary-400;
+          z-index: -1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 20%;
+          left: 0;
+          width: 70%;
+          height: 100%;
+          background-color: $color-primary-400;
+          border-top-right-radius: 100vh;
+          border-bottom-right-radius: 100vh;
+          z-index: -1;
+        }
+      }
+    }
+
+    &:nth-child(2),
+    &:last-of-type {
+      .tabpanel__image {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 20%;
+          right: 90%;
+          width: 100vw;
+          height: 90%;
+          background-color: $color-primary-400;
+          z-index: -1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 20%;
+          left: 0;
+          width: 70%;
+          height: 90%;
+          background-color: $color-primary-400;
+          border-top-right-radius: 100vh;
+          border-bottom-right-radius: 100vh;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .main__btn {
+    transition: 400ms ease-in-out;
+  }
+
+  .main__btn[data-type="primary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-primary-400;
+    outline: 2px solid $color-primary-400;
+    outline-offset: -2px;
+  }
+
+  .main__btn[data-type="secondary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-neutral-900;
+    outline: 2px solid $color-neutral-900;
+    outline-offset: -2px;
+  }
+</style>

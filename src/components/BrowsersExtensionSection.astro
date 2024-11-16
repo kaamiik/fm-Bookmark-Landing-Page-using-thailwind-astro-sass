@@ -1,0 +1,121 @@
+---
+const browsers = [
+  {
+    name: "Chrome",
+    imgSrc: "/assets/images/logo-chrome.svg",
+    imgAlt: "Chrome Logo",
+    minVersion: "62",
+    buttonText: "Add & Install Extension",
+    className: "chrome",
+  },
+  {
+    name: "Firefox",
+    imgSrc: "/assets/images/logo-firefox.svg",
+    imgAlt: "Firefox Logo",
+    minVersion: "55",
+    buttonText: "Add & Install Extension",
+    className: "firefox",
+  },
+  {
+    name: "Opera",
+    imgSrc: "/assets/images/logo-opera.svg",
+    imgAlt: "Opera Logo",
+    minVersion: "46",
+    buttonText: "Add & Install Extension",
+    className: "opera",
+  },
+];
+---
+
+<div class="container mt-20 flex flex-col gap-10" data-type="browsers">
+  <div
+    class="flex flex-col gap-4 text-center text-balance max-w-[33.75rem] mx-auto"
+  >
+    <h2 class="heading-2">Download the extension</h2>
+    <p>
+      We’ve got more browsers in the pipeline. Please do let us know if you’ve
+      got a favourite you’d like us to prioritize.
+    </p>
+  </div>
+  <div class="browsers-extension | grid gap-4">
+    {
+      browsers.map((browser) => (
+        <div
+          class={`${browser.className} | flex flex-col gap-6 pt-13 pb-6 px-[2px] max-w-[17.75rem] mx-auto rounded-md box-shadow-2`}
+        >
+          <div class="flex flex-col gap-8">
+            <img
+              class="mx-auto"
+              src={browser.imgSrc}
+              alt={browser.imgAlt}
+              width="102"
+              height="100"
+            />
+            <div class="flex flex-col gap-[6px] text-center">
+              <h3 class="heading-3">Add to {browser.name}</h3>
+              <p>Minimum version {browser.minVersion}</p>
+            </div>
+            <img src="/assets/images/bg-dots.svg" alt="" />
+          </div>
+          <a
+            class="main__btn bg-soft-blue text-white py-[0.625rem] px-9 rounded-sm box-shadow-1 w-fit mx-auto"
+            data-type="primary"
+            href="#"
+          >
+            {browser.buttonText}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .browsers-extension {
+    @include mq(large) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      column-gap: $size-8;
+      row-gap: 0;
+    }
+
+    & .chrome {
+      @include mq(large) {
+        grid-column: 1;
+        grid-row: 1 / 8;
+      }
+    }
+    & .firefox {
+      @include mq(large) {
+        grid-column: 2;
+        grid-row: 2 / 9;
+      }
+    }
+    & .opera {
+      @include mq(large) {
+        grid-column: 3;
+        grid-row: 3 / 10;
+      }
+    }
+  }
+
+  .main__btn {
+    transition: 400ms ease-in-out;
+  }
+
+  .main__btn[data-type="primary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-primary-400;
+    outline: 2px solid $color-primary-400;
+    outline-offset: -2px;
+  }
+
+  .main__btn[data-type="secondary"]:is(:hover, :focus-visible) {
+    background-color: $color-neutral-100;
+    color: $color-neutral-900;
+    outline: 2px solid $color-neutral-900;
+    outline-offset: -2px;
+  }
+</style>

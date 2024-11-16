@@ -1,0 +1,86 @@
+---
+
+---
+
+<div class="mt-24 bg-soft-blue pt-15 pb-10">
+  <div class="container flex flex-col gap-8" data-type="cta">
+    <div class="flex flex-col gap-4">
+      <p class="text-white text-center tracking-[4.62px] uppercase">
+        35,000+ already joined
+      </p>
+      <h2 class="fs-800 fw-medium text-white text-center tracking-[-0.08px]">
+        Stay up-to-date with what we’re doing
+      </h2>
+    </div>
+    <form novalidate class="cta js-cta | grid gap-4" action="#">
+      <div class="js-error-div" aria-live="polite">
+        <label class="sr-only" for="email-address">Email Address</label>
+        <input
+          class="cta__input js-cta-input | fs-200 text-very-dark-blue w-full py-[0.625rem] px-5 border-radius-1 leading-loose"
+          type="email"
+          id="email-address"
+          name="email"
+          placeholder="Enter your email address"
+          aria-invalid="false"
+          required
+        />
+        <p
+          class="js-error-message | text-white text-[0.625rem] absolute bottom-[6px] left-[12px] italic fw-medium"
+          hidden
+        >
+        </p>
+        <img
+          class="js-error-icon | absolute top-4 right-4"
+          src="/public/assets/images/icon-error.svg"
+          alt=""
+          hidden
+        />
+      </div>
+      <button
+        class="cta__btn | fs-200 bg-soft-red text-white py-[0.625rem] px-6 border-radius-1 box-shadow-1 leading-loose self-baseline"
+        type="submit">Contact Us</button
+      >
+    </form>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .cta {
+    @include mq(medium) {
+      grid-template-columns: 1fr auto;
+    }
+
+    &__input {
+      outline: 2px solid transparent;
+
+      &:focus-visible {
+        outline-color: $color-neutral-200;
+        outline-offset: 4px;
+      }
+
+      &[aria-invalid="true"] {
+        outline-color: $color-primary-500;
+        outline-offset: 0;
+      }
+    }
+
+    &__btn {
+      outline: 2px solid transparent;
+      transition: 400ms ease-in-out;
+      &:is(:hover, :focus-visible) {
+        color: $color-primary-500;
+        background-color: $color-neutral-100;
+        outline-color: $color-primary-500;
+      }
+    }
+  }
+
+  .error-div {
+    background-color: $color-primary-500;
+    padding: 2px 2px 22px;
+    border-radius: $border-radius-1;
+    position: relative;
+  }
+</style>
