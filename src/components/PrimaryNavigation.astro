@@ -48,7 +48,7 @@
       </div>
       <!-- Header items navigation -->
       <ul class="nav__list | flex-group uppercase fs-600 tracking-[1.5px]">
-        <li><a href="/index.html">Features</a></li>
+        <li><a href="#">Features</a></li>
         <li><a href="#">Pricing</a></li>
         <li><a href="#">Contact</a></li>
         <li class="nav__login">
@@ -156,11 +156,16 @@
       @include mq(medium) {
         display: none;
       }
+    }
 
-      &:focus-visible {
-        outline-color: $color-primary-500;
-        border-radius: 0;
-      }
+    &__home:focus {
+      outline-color: $color-primary-500;
+      border-radius: 0;
+    }
+
+    &__close::focus-visible {
+      outline-color: $color-primary-500;
+      border-radius: 0;
     }
 
     &__list {
@@ -182,7 +187,7 @@
           border-top: 1px solid hsla(0, 0%, 100%, 15%);
         }
 
-        & a:focus-visible {
+        & a:focus {
           outline-color: $color-primary-500;
         }
       }
@@ -208,7 +213,7 @@
       @include mq(medium) {
         outline: 2px solid transparent;
         transition: 400ms ease-in-out;
-        &:is(:hover, :focus-visible) {
+        &:is(:hover, :focus) {
           color: $color-primary-500;
           background-color: $color-neutral-100;
           outline-color: $color-primary-500;
@@ -222,7 +227,7 @@
         display: none;
       }
 
-      & a:focus-visible {
+      & a:focus {
         outline-color: $color-primary-500;
       }
     }

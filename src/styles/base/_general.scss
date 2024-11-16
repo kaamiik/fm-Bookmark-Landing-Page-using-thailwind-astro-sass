@@ -21,7 +21,7 @@ a:hover {
   color: $link-color-hover;
 }
 
-a:focus-visible,
+a:focus,
 button:focus-visible {
   color: $link-color-hover;
   outline: 2px solid $color-primary-400;

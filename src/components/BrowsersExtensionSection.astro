@@ -74,10 +74,23 @@ const browsers = [
   @use "../styles/abstracts/" as *;
 
   .browsers-extension {
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+
+    container-type: inline-size;
+
+    @container (width >= calc(16rem* 2 + 1rem)) {
+      & > *:last-child {
+        grid-column-end: span 2;
+      }
+    }
+
+    @include mq(medium) {
+      gap: $size-8;
+    }
+
     @include mq(large) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(9, 1fr);
-      column-gap: $size-8;
       row-gap: 0;
     }
 
@@ -99,23 +112,5 @@ const browsers = [
         grid-row: 3 / 10;
       }
     }
-  }
-
-  .main__btn {
-    transition: 400ms ease-in-out;
-  }
-
-  .main__btn[data-type="primary"]:is(:hover, :focus-visible) {
-    background-color: $color-neutral-100;
-    color: $color-primary-400;
-    outline: 2px solid $color-primary-400;
-    outline-offset: -2px;
-  }
-
-  .main__btn[data-type="secondary"]:is(:hover, :focus-visible) {
-    background-color: $color-neutral-100;
-    color: $color-neutral-900;
-    outline: 2px solid $color-neutral-900;
-    outline-offset: -2px;
   }
 </style>

@@ -32,7 +32,7 @@
         <ul
           class="flex flex-col gap-8 items-center uppercase lg:flex-row lg:gap-11"
         >
-          <li><a href="/index.html">Features</a></li>
+          <li><a href="#">Features</a></li>
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -96,7 +96,7 @@
         color: $footer-link-color-hover;
       }
 
-      &:focus-visible {
+      &:focus {
         color: $footer-link-color-hover;
         outline: 2px solid $color-primary-500;
         outline-offset: 4px;
@@ -111,11 +111,8 @@
         transition: 270ms ease-in-out;
       }
 
-      &:hover path {
-        fill: $color-primary-500;
-      }
-
-      &:focus-visible path {
+      &:hover path,
+      &:focus path {
         fill: $color-primary-500;
       }
     }

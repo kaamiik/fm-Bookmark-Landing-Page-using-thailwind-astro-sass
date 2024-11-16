@@ -55,7 +55,7 @@
     &__input {
       outline: 2px solid transparent;
 
-      &:focus-visible {
+      &:focus {
         outline-color: $color-neutral-200;
         outline-offset: 4px;
       }
@@ -69,7 +69,7 @@
     &__btn {
       outline: 2px solid transparent;
       transition: 400ms ease-in-out;
-      &:is(:hover, :focus-visible) {
+      &:is(:hover, :focus) {
         color: $color-primary-500;
         background-color: $color-neutral-100;
         outline-color: $color-primary-500;
