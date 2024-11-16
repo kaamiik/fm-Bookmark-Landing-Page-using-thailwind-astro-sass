@@ -54,7 +54,7 @@ const faqs = [
       {
         faqs.map(({ id, question, answer, open, borderClass }) => (
           <details
-            class={`pt-5 pb-3 border-solid border-very-dark-blue/[0.15] ${borderClass}`}
+            class={`py-5 border-solid border-very-dark-blue/[0.15] ${borderClass}`}
             name="faq"
             open={open}
           >
@@ -62,7 +62,9 @@ const faqs = [
               class="list-none cursor-pointer flex justify-between items-center"
               id={id}
             >
-              <p class="text-very-dark-blue">{question}</p>
+              <h3 class="text-very-dark-blue fs-400 leading-normal">
+                {question}
+              </h3>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
                 <path
                   fill="none"
@@ -92,11 +94,11 @@ const faqs = [
 <style lang="scss">
   @use "../styles/abstracts/" as *;
 
-  summary p {
+  summary h3 {
     transition: 275ms ease-in-out;
   }
 
-  summary:is(:hover, :focus-visible) p {
+  summary:is(:hover, :focus-visible) h3 {
     color: $color-primary-500;
   }
 
