@@ -28,6 +28,10 @@ export default {
       "4xl": "2rem",
       "5xl": "3rem",
     },
+    borderRadius: {
+      sm: "0.3125rem",
+      md: "0.9375rem",
+    },
     extend: {
       boxShadow: {
         md: "0 8px 8px -4px rgba(73, 93, 207, 20.01%)",
