@@ -1,9 +1,5 @@
 @use "../abstracts" as *;
 
-.section {
-  padding-block: $section-padding-block;
-}
-
 @each $size-name, $size-value in $sizes {
   .margin {
     &-#{$size-name} {
