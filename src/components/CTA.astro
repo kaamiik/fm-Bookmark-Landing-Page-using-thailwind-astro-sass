@@ -20,12 +20,15 @@
           type="email"
           id="email-address"
           name="email"
+          autocomplete="email"
           placeholder="Enter your email address"
           aria-invalid="false"
           required
+          aria-describedby="error-message"
         />
         <p
           class="js-error-message | text-white text-[0.625rem] absolute bottom-[6px] left-[12px] italic fw-medium"
+          id="error-message"
           hidden
         >
         </p>
