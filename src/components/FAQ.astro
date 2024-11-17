@@ -6,7 +6,6 @@ const faqs = [
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
     tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
     quis quam ornare mattis.`,
-    open: true,
     borderClass: "border-y", // First FAQ has border-y
   },
   {
@@ -16,7 +15,6 @@ const faqs = [
     ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros
     aliquet convallis ultricies. Mauris augue massa, ultricies non
     ligula. Suspendisse imperdiet.`,
-    open: false,
     borderClass: "border-b", // Others have border-b
   },
   {
@@ -26,7 +24,6 @@ const faqs = [
     vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
     quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin
     ex et ultricies bibendum.`,
-    open: false,
     borderClass: "border-b",
   },
   {
@@ -35,7 +32,6 @@ const faqs = [
     answer: `Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat
     mi, at euismod dui. Aliquam vitae neque eget nisl gravida
     pellentesque non ut velit.`,
-    open: false,
     borderClass: "border-b",
   },
 ];
@@ -57,7 +53,6 @@ const faqs = [
           <details
             class={`py-5 border-solid border-very-dark-blue/[0.15] ${borderClass}`}
             name="faq"
-            open={open}
           >
             <summary
               class="list-none cursor-pointer flex justify-between items-center"
